@@ -16,11 +16,16 @@ export const Header = () => (
     <Container maxW={["container.xl", null, null, "8xl"]}>
       <Flex height="100%" align="center">
         <Flex align="center">
-          <NextLink href="/" passHref>
-            <Link>
-              <Heading as="h1">Les Histoires d'Oscar</Heading>
-            </Link>
-          </NextLink>
+          <Flex direction="column" align="center">
+            <NextLink href="/" passHref>
+              <Link>
+                <Heading as="h1">Les Histoires d'Oscar</Heading>
+              </Link>
+            </NextLink>
+            <Box>
+              <i>Histoires écrites par Oscar Hervé</i>
+            </Box>
+          </Flex>
         </Flex>
         <Spacer></Spacer>
         <Flex align="center" height="100%" justifyContent="flex-end">
