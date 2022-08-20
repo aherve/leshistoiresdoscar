@@ -9,8 +9,8 @@ type Story = {
 
 const stories: Story[] = [
   {
-    slug: "le-petit-rigolo",
-    link: "L'histoire du petit rigolo",
+    slug: "le-chien-le-chat-et-la-grenouille",
+    link: "Le chien, le chat et la grenouille",
   },
   {
     slug: "l-ours-et-la-famille-lion",
@@ -21,12 +21,12 @@ const stories: Story[] = [
     link: "La famille lion",
   },
   {
-    slug: "le-chien-le-chat-et-la-grenouille",
-    link: "Le chien, le chat et la grenouille",
-  },
-  {
     slug: "le-tigre-et-le-lapin",
     link: "Le tigre et le lapin",
+  },
+  {
+    slug: "le-petit-rigolo",
+    link: "L'histoire du petit rigolo",
   },
 ];
 
