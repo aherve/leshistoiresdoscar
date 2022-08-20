@@ -1,34 +1,51 @@
 import type { NextPage } from "next";
-import { Heading, Link, ListItem, UnorderedList } from "@chakra-ui/react";
-import { readdir } from "node:fs/promises";
-import path from "path";
+import { Box, Link, ListItem, UnorderedList } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-export async function getServerSideProps() {
-  console.log("PWD", process.cwd());
-  const stories = await readdir("./pages/histoires/");
-  return {
-    props: {
-      stories: stories.map((s) => path.parse(s).name),
-    },
-  };
-}
+type Story = {
+  slug: string;
+  link: string;
+};
 
-const Home: NextPage<{ stories: string[] }> = (props) => {
+const stories: Story[] = [
+  {
+    slug: "le-petit-rigolo",
+    link: "L'histoire du petit rigolo",
+  },
+  {
+    slug: "l-ours-et-la-famille-lion",
+    link: "L'ours et la famille lion",
+  },
+  {
+    slug: "la-famille-lion",
+    link: "La famille lion",
+  },
+  {
+    slug: "le-chien-le-chat-et-la-grenouille",
+    link: "Le chien, le chat et la grenouille",
+  },
+  {
+    slug: "le-tigre-et-le-lapin",
+    link: "Le tigre et le lapin",
+  },
+];
+
+const Home: NextPage = () => {
   return (
     <>
-      <Heading as="h1"> Les histoires d&apos;Oscar</Heading>
-      <UnorderedList>
-        {props.stories.map((story) => {
-          return (
-            <ListItem key={story}>
-              <NextLink href={"histoires/" + story} passHref>
-                <Link>{story}</Link>
-              </NextLink>
-            </ListItem>
-          );
-        })}
-      </UnorderedList>
+      <Box className="home">
+        <UnorderedList>
+          {stories.map((story) => {
+            return (
+              <ListItem key={story.slug}>
+                <NextLink href={"histoires/" + story.slug} passHref>
+                  <Link>{story.link}</Link>
+                </NextLink>
+              </ListItem>
+            );
+          })}
+        </UnorderedList>
+      </Box>
     </>
   );
 };

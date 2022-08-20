@@ -24,3 +24,22 @@ a {
     background: black;
   }
 }
+
+.story {
+  margin: 20px;
+}
+
+.story p {
+  margin: 10px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.story img {
+  margin: 20px;
+  float: right;
+  max-width: 300px;
+}
+
+.home {
+  margin: 20px;
+}
